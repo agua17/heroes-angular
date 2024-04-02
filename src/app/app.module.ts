@@ -10,12 +10,13 @@ import { Observable, observable } from 'rxjs';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-  
+
     DashboardComponent
   ],
   imports: [
