@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { PostService } from './services/post.service';
 
 
 
@@ -7,7 +8,18 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Tour of Heroes';
+  posts: Object | undefined;
+
+  constructor(private service:PostService) {}
+  
+  ngOnInit() {
+      this.service.getPosts()
+        .subscribe(response => {
+          this.posts = response;
+          console.log(response);
+        });
+  }
 
 }
