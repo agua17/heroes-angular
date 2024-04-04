@@ -10,6 +10,7 @@ import { Observable, observable } from 'rxjs';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
+import { ButtonComponent } from './button/button.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MessagesComponent } from './messages/messages.component';
     HeroDetailComponent,
 
     DashboardComponent,
-     MessagesComponent
+     MessagesComponent,
+     ButtonComponent
   ],
   imports: [
     BrowserModule,
