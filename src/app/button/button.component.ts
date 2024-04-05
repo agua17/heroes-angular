@@ -1,4 +1,5 @@
 import { Component,Input,Output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -6,5 +7,7 @@ import { Component,Input,Output } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent {
+
+
 
 }

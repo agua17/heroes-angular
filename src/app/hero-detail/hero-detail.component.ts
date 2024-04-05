@@ -12,15 +12,14 @@ import { Location } from '@angular/common';
 export class HeroDetailComponent implements OnInit{
 
   hero?:Hero;
-  //inyectamos los servicios guardado los valores en campos privados dentro del constructor
-  constructor(private heroService : HeroService, private route: ActivatedRoute, private location:Location ){}
+  constructor(private _heroService : HeroService, private _route: ActivatedRoute, private _location:Location ){}
 
   ngOnInit(): void {
     this.getHero();
   }
   getHero() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.heroService.getHero(id).subscribe(x => this.hero = x );
+    const id = Number(this._route.snapshot.paramMap.get('id'));
+    this._heroService.getHero(id).subscribe(hero=> this.hero = hero );
 
   }
 
