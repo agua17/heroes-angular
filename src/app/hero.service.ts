@@ -12,9 +12,6 @@ import { MessageService } from './message.service';
 })
 
 export class HeroService {
-  updateHero(hero: Hero) {
-    throw new Error('Method not implemented.');
-  }
   constructor(private messageService: MessageService) { }
 
   getHero (id: number): Observable<Hero>{
