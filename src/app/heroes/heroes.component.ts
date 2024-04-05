@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Hero } from '../hero';
+import { Hero, Hero2 } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 import { PostService } from '../services/post.service';
@@ -11,30 +11,32 @@ import { PostService } from '../services/post.service';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-add(arg0: string) {
-throw new Error('Method not implemented.');
-}
-delete(_t10: Hero) {
-throw new Error('Method not implemented.');
-}
 
-  selectedHero: Hero | undefined;
+  selectedHero: Hero2 | undefined;
 
-  heroes: Hero[] | undefined;
+  heroes: Hero2[] | undefined;
+  
 
   constructor(private heroService: HeroService, private messageService: MessageService, private postService : PostService) { }
 
+  
   ngOnInit() {
-    this.getHeroes();
+    this.postService.searchHeroes().subscribe( (resp: any) => {
+      this.heroes = resp;
+      console.log (resp);
+      
+    });
+
+    //this.getHeroes()
   }
 
-  onSelect(hero: Hero): void {
+  onSelect(hero: Hero2): void {
     this.selectedHero = hero;
     this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
+   /* this.heroService.getHeroes()
+        .subscribe(heroes => this.heroes = heroes);*/
   }
 }

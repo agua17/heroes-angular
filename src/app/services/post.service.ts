@@ -5,12 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PostService {
-
-  private url = 'http://jsonplaceholder.typicode.com/posts';
-   
-  constructor(private httpClient: HttpClient) { }
   
-  getPosts(){
-    return this.httpClient.get(this.url);
-  }
+
+  constructor(private httpClient: HttpClient) { }
+
+searchHeroes(){
+  const url = 'http://jsonplaceholder.typicode.com/posts';
+   return this.httpClient.get(url);
+
 }
+  
+}
+
