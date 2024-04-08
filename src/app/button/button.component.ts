@@ -9,12 +9,12 @@ import { Location } from '@angular/common';
 })
 export class ButtonComponent implements OnInit {
 
-  constructor( private location : Location) {}
+  constructor( private _location : Location) {}
 
   ngOnInit(): void {}
 
   onClick(){
-    this.location.back();
+    this._location.back();
   }
 
 

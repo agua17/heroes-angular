@@ -17,22 +17,19 @@ export class HeroesComponent implements OnInit {
   heroes: Hero2[] | undefined;
   
 
-  constructor(private heroService: HeroService, private messageService: MessageService, private postService : PostService) { }
+  constructor(private _heroService: HeroService, private _messageService: MessageService, private _postService : PostService) { }
 
   
   ngOnInit() {
-    this.postService.searchHeroes().subscribe( (resp: any) => {
+    this._postService.searchHeroes().subscribe( (resp: any) => {
       this.heroes = resp;
-      console.log (resp);
       
     });
-
-    //this.getHeroes()
   }
 
   onSelect(hero: Hero2): void {
     this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
+    this._messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
 
   getHeroes(): void {
