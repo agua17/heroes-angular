@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './messages/messages.component';
 import { ButtonComponent } from './button/button.component';
+import { ButtonSaveComponent } from './button-save/button-save.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ButtonComponent } from './button/button.component';
 
     DashboardComponent,
      MessagesComponent,
-     ButtonComponent
+     ButtonComponent,
+     ButtonSaveComponent
   ],
   imports: [
     BrowserModule,

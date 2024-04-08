@@ -13,7 +13,7 @@
   <div><span>id: </span>{{selectedHero.id}}</div>
   <div>
     <label>name:
-      <input [(ngModel)]="selectedHero.title" placeholder="name"/>
+      <input [(ngModel)]="selectedHero.title" placeholder="name" required aria-label="hero-name" aria-required="true"/>
     </label>
   </div>
 
